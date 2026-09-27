@@ -1,15 +1,19 @@
 
-const obj = {
-    name : 'Jorge', 
-    age: '2006-03-17'
+const buildMakePerson = ({getUUID,getAge}) => {
+
+    return ({name, birthdate}) => {
+        
+        return  {
+            id: getUUID(),
+            name,
+            birthdate,
+            age: getAge(birthdate)
+        }
 }
 
-const buildPerson = ({name, birthdate}) => {
 
-    return  {
-        id: new Date().getTime(),
-        name, 
-        birthdate,
-        age: new Date().getFullYear() - new Date(birthdate).getFullYear(),
-    }
+}
+
+module.exports = {
+    buildMakePerson
 }
