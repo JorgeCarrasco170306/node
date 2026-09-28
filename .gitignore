@@ -9,5 +9,6 @@ pnpm-debug.log*
 coverage/
 dist/
 build/
+outputs/
 .DS_Store
 *.log
